@@ -1,0 +1,71 @@
+if(last==0) {
+				last = solapp(0);
+				if(last==8){
+					Main.end = 0;
+					Main.endext = generator.nextInt(3);
+					return;
+				}
+				int id = generator.nextInt(3);
+				Main.a[id] = last;
+				Main.time[0] = true;
+				Main.solution[0] = id;
+			}
+			if(last==1) {
+				last = solapp(1);
+				if(last==8){
+					Main.end = 1;
+					Main.endext = generator.nextInt(3);
+					return;
+				}
+				int id = generator.nextInt(3);
+				Main.b[id] = last;
+				Main.time[1] = true;
+				Main.solution[1] = id;
+			}
+			if(last==2) {
+				last = solapp(2);
+				if(last==8){
+					Main.end = 2;
+					Main.endext = generator.nextInt(3);
+					return;
+				}
+				int id = generator.nextInt(3);
+				Main.c[id] = last;
+				Main.time[2] = true;
+				Main.solution[2] = id;
+			}
+			if(last==3) {
+				last = solapp(3);
+				if(last==8){
+					Main.end = 3;
+					Main.endext = generator.nextInt(3);
+					return;
+				}
+				int id = generator.nextInt(3);
+				Main.d[id] = last;
+				Main.time[3] = true;
+				Main.solution[3] = id;
+			}
+			if(last==4) {
+				last = solapp(4);
+				if(last==8){
+					Main.end = 4;
+					Main.endext = generator.nextInt(3);
+					return;
+				}
+				int id = generator.nextInt(3);
+				Main.e[id] = last;
+				Main.time[4] = true;
+				Main.solution[4] = id;
+			}
+			if(last==5) {
+				last = solapp(5);
+				if(last==8){
+					Main.end = 5;
+					Main.endext = generator.nextInt(3);
+					return;
+				}
+				int id = generator.nextInt(3);
+				Main.f[id] = last;
+				Main.time[5] = true;
+				Main.solution[5] = id;
