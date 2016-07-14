@@ -1,7 +1,5 @@
 package tubi.bastarti;
 
-import java.util.Arrays;
-
 import org.fusesource.jansi.Ansi.Color;
 import static org.fusesource.jansi.Ansi.Color.*;
 
