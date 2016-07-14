@@ -1,7 +1,5 @@
 package tubi.bastarti;
 
-import java.util.Arrays;
-import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -30,6 +28,8 @@ public class Main {
 		AnsiConsole.systemInstall();
 		Startup.startup();
 		Scanner sc = new Scanner(System.in);
+		boolean giustopertogliereilwarn = false;
+		if(giustopertogliereilwarn) System.out.println(sc);
 		boolean sol = false;
 		long startTime = System.currentTimeMillis();
 		logger("Start at: "+startTime+"\n\nPROGRAMMED BY STRANCK http://bit.ly/SLClink\n\n");
@@ -63,9 +63,16 @@ public class Main {
 					//System.out.println(i+" "+selection[i]+" "+solution[i]);
 				}
 			}
-			String[] sp = in.split("\\s+");
-			if(toInt(sp[0])==6||Integer.parseInt(sp[1])>2) System.out.println(ansi().fg(RED).a("Invalid format.").reset()); else {
-				selection[toInt(sp[0])] = Integer.parseInt(sp[1]);
+			try {
+				String[] sp = new String[2];
+				sp[1] = "ScemoChiLegge";
+				sp = in.split("\\s+");
+				if(isNumber(sp[1])) if(sp.length<2||toInt(sp[0])==6||Integer.parseInt(sp[1])>2) System.out.println(ansi().fg(RED)
+						.a("Invalid format.").reset()); else {
+							selection[toInt(sp[0])] = Integer.parseInt(sp[1]);
+					} else System.out.println(ansi().fg(RED).a("Invalid format.").reset());
+			} catch(java.lang.ArrayIndexOutOfBoundsException e){
+				System.out.println(ansi().fg(RED).a("Invalid format.").reset());
 			}
 			if(airFlow()&&sol==false){
 				long estimatedTime = System.currentTimeMillis() - startTime;
@@ -111,6 +118,16 @@ public class Main {
 			next = read(next, s);
 			if(stat[next]==3) stat[next] = 1;
 		}
+	}
+	public static boolean isNumber(String s){
+		try {
+			Integer.parseInt(s);
+		} catch(NumberFormatException e) {
+			return false;
+		} catch(NullPointerException e) {
+			return false;
+		}
+		return true;
 	}
 	public static int read(int v, int i){
 		if(v==0) return a[i];
